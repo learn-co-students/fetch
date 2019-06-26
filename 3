@@ -1,0 +1,23 @@
+function fetchBooks(){
+  fetch('http://localhost:3000/books')
+    .then((resp) => resp.json())
+    .then((data) => {
+      renderBooks(data)
+    })
+    .catch((err) => console.log(err))
+}
+
+function renderBooks(bookData){
+  bookData.forEach((book) => {
+    buildBookElement(book)
+
+    // create a book element
+    // shove bookElement into #book-list div
+  })
+}
+
+function main(){
+  fetchBooks()
+}
+
+main()
